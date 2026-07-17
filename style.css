@@ -370,3 +370,41 @@ textarea#message {
     font-size: 14px;
     color: #888;
 }
+
+/* Hide the lightbox by default */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    /* Dark background blur effect */
+    text-align: center;
+}
+
+/* Center the image inside the full-screen pop-out */
+.lightbox-close {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.lightbox-close img {
+    max-width: 90%;
+    max-height: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid white;
+}
+
+/* THE MAGIC: Show the lightbox when its ID is in the URL target */
+.lightbox:target {
+    display: block;
+}
